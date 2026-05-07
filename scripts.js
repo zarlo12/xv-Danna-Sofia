@@ -70,34 +70,55 @@ if (invitado) {
 
 // Función para enviar el mensaje de WhatsApp
 function enviarWhatsApp(nombre, numeroInvitados) {
-  console.log("🚀 ~ enviarWhatsApp ~ numeroInvitados:", numeroInvitados);
-  console.log("🚀 ~ enviarWhatsApp ~ nombre:", nombre);
-  const numeroTelefono = "+5215548046579"; // Reemplaza con el número de teléfono al que deseas enviar el mensaje
-  let mensaje = `Hola soy *${nombre}* \n\nConfirmo el número de asistentes: ${numeroInvitados}`;
+  const numeroTelefono = "+5215621143649";
+  let mensaje;
+
   if (numeroInvitados == "No podra asistir") {
-    mensaje = `Hola soy ${nombre}, confirmo que no podre asistir.`;
+    mensaje =
+      `🖤⭐ *XV Años · Danna Sofía* ⭐🖤\n` +
+      `` +
+      `Hola, soy *${nombre}*\n\n` +
+      `` +
+      `Lamentablemente no podré asistir a tu noche especial.\n\n` +
+      `Que sea una velada _legendaria_ e inolvidable ✨\n\n` +
+      `🎤 _"You Are Not Alone"_ — siempre contigo en pensamiento 🖤`;
+  } else if (numeroInvitados == 0) {
+    mensaje =
+      `🖤⭐ *XV Años · Danna Sofía* ⭐🖤\n` +
+      `` +
+      `Hola, soy *${nombre}*\n\n` +
+      `` +
+      `¡Con gusto confirmo mi asistencia!\n\n` +
+      `Nos vemos en la pista 🎵🖤`;
+  } else {
+    mensaje =
+      `🖤⭐ *XV Años · Danna Sofía* ⭐🖤\n` +
+      `` +
+      `Hola, soy *${nombre}*\n\n` +
+      `` +
+      `🎤 *Asistentes:* ${numeroInvitados}\n\n` +
+      `¡Nos vemos en la pista! 🖤✨`;
   }
-  if (numeroInvitados == 0) {
-    mensaje = `Hola soy ${nombre}, confirmo mi invitación.`;
-  }
-  const url = `https://api.whatsapp.com/send?phone=${numeroTelefono}&text=${encodeURIComponent(
-    mensaje,
-  )}`;
+
+  const url = `https://api.whatsapp.com/send?phone=${numeroTelefono}&text=${encodeURIComponent(mensaje)}`;
   window.open(url, "_blank");
 }
 
 function enviarWhatsAppForm(nombre_form, anecdota_form, deseos_form) {
-  // console.log("🚀 ~ enviarWhatsApp ~ numeroInvitados:", numeroInvitados);
-  // console.log("🚀 ~ enviarWhatsApp ~ nombre:", nombre);
-  const numeroTelefono = "+5215548046579"; // Reemplaza con el número de teléfono al que deseas enviar el mensaje
-  let mensaje = `Hola soy ${nombre_form},\nConfirmó mi invitación. `;
+  const numeroTelefono = "+5215621143649";
+  const mensaje =
+    `🖤⭐ *XV Años · Danna Sofía* ⭐🖤\n` +
+    `` +
+    `Hola, soy *${nombre_form}*\n\n` +
+    `` +
+    `¡Confirmo mi asistencia con todo el corazón!\n\n` +
+    `🎵 *Una anécdota juntos:*\n` +
+    `_${anecdota_form}_\n\n` +
+    `💌 *Mis deseos para Danna:*\n` +
+    `_${deseos_form}_\n\n` +
+    `_"Heal the World"_ — que esta noche sea mágica 🖤✨`;
 
-  mensaje = mensaje + "\n\n*Anecdota juntos:* " + anecdota_form;
-  mensaje = mensaje + "\n\n*Palabras o buenos deseos:* " + deseos_form;
-
-  const url = `https://api.whatsapp.com/send?phone=${numeroTelefono}&text=${encodeURIComponent(
-    mensaje,
-  )}`;
+  const url = `https://api.whatsapp.com/send?phone=${numeroTelefono}&text=${encodeURIComponent(mensaje)}`;
   window.open(url, "_blank");
 }
 
