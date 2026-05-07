@@ -21,12 +21,28 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="900" />
     <meta property="og:image:type" content="image/jpeg" />
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+    <style>
+        .elementor-message-danger {
+            display: none;
+        }
+    </style>
+
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:label1" content="Tiempo de lectura" />
     <meta name="twitter:data1" content="3 minutos" />
     <script type="application/ld+json"
         class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/rd-invitaciones.com\/hannia_darlen_mis_xv\/","url":"https:\/\/rd-invitaciones.com\/hannia_darlen_mis_xv\/","name":"Danna Sofia | Mis XV","isPartOf":{"@id":"https:\/\/rd-invitaciones.com\/#website"},"primaryImageOfPage":{"@id":"https:\/\/rd-invitaciones.com\/hannia_darlen_mis_xv\/#primaryimage"},"image":{"@id":"https:\/\/rd-invitaciones.com\/hannia_darlen_mis_xv\/#primaryimage"},"thumbnailUrl":"https:\/\/rd-invitaciones.com\/wp-content\/uploads\/2025\/01\/xasd-2.jpg","datePublished":"2025-01-15T21:10:29+00:00","dateModified":"2025-07-15T03:03:57+00:00","description":"Te invito a ser parte de un evento inolvidable y único, espero poder compartir este bello momento a tu lado.","breadcrumb":{"@id":"https:\/\/rd-invitaciones.com\/hannia_darlen_mis_xv\/#breadcrumb"},"inLanguage":"es","potentialAction":[{"@type":"ReadAction","target":["https:\/\/rd-invitaciones.com\/hannia_darlen_mis_xv\/"]}]},{"@type":"ImageObject","inLanguage":"es","@id":"https:\/\/rd-invitaciones.com\/hannia_darlen_mis_xv\/#primaryimage","url":"https:\/\/rd-invitaciones.com\/wp-content\/uploads\/2025\/01\/xasd-2.jpg","contentUrl":"https:\/\/rd-invitaciones.com\/wp-content\/uploads\/2025\/01\/xasd-2.jpg","width":1200,"height":900},{"@type":"BreadcrumbList","@id":"https:\/\/rd-invitaciones.com\/hannia_darlen_mis_xv\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https:\/\/rd-invitaciones.com\/"},{"@type":"ListItem","position":2,"name":"Danna Sofia | Mis XV"}]},{"@type":"WebSite","@id":"https:\/\/rd-invitaciones.com\/#website","url":"https:\/\/rd-invitaciones.com\/","name":"Retoque Digital","description":"","publisher":{"@id":"https:\/\/rd-invitaciones.com\/#organization"},"alternateName":"RD","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/rd-invitaciones.com\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"es"},{"@type":"Organization","@id":"https:\/\/rd-invitaciones.com\/#organization","name":"Retoque Digital","alternateName":"RD","url":"https:\/\/rd-invitaciones.com\/","logo":{"@type":"ImageObject","inLanguage":"es","@id":"https:\/\/rd-invitaciones.com\/#\/schema\/logo\/image\/","url":"https:\/\/rd-invitaciones.com\/wp-content\/uploads\/2024\/07\/LOGO-RETOQUE-DIGITAL.png","contentUrl":"https:\/\/rd-invitaciones.com\/wp-content\/uploads\/2024\/07\/LOGO-RETOQUE-DIGITAL.png","width":1080,"height":1080,"caption":"Retoque Digital"},"image":{"@id":"https:\/\/rd-invitaciones.com\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/Retoquedigitalmx"]}]}</script>
     <!-- / Yoast SEO plugin. -->
+
+
+
 
 
     <link rel="alternate" type="application/rss+xml" title="Retoque Digital &raquo; Feed"
@@ -2490,11 +2506,11 @@
                                         <div
                                             class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-indicatunombre elementor-col-100 elementor-field-required">
                                             <label for="form-field-indicatunombre" class="elementor-field-label">
-                                                Nombre del invitado </label>
-                                            <input size="1" type="text" name="form_fields[indicatunombre]"
-                                                id="form-field-indicatunombre"
-                                                class="elementor-field elementor-size-md  elementor-field-textual"
-                                                placeholder="Nombre completo" required="required">
+                                                Invitación para </label>
+                                            <label class="elementor-field-label tamanio" id="nombreInvitado" style="font-size: 35px;
+    color: #8f034e;">
+                                                No encontrado
+                                            </label>
                                         </div>
                                         <div
                                             class="elementor-field-type-select elementor-field-group elementor-column elementor-field-group-nombredelosacompanantes elementor-col-100 elementor-field-required">
@@ -2510,42 +2526,21 @@
                                                         </path>
                                                     </svg>
                                                 </div>
-                                                <select name="form_fields[nombredelosacompanantes]"
-                                                    id="form-field-nombredelosacompanantes"
+                                                <select name="form_fields[numerodeacompanantes]" id="listaInvitados"
                                                     class="elementor-field-textual elementor-size-md"
                                                     required="required">
-                                                    <option value="0">0</option>
+                                                    <option value="" disabled selected>
+                                                        Número de acompañantes
+                                                    </option>
                                                 </select>
                                             </div>
                                         </div>
-                                        <div
-                                            class="elementor-field-type-radio elementor-field-group elementor-column elementor-field-group-field_3c614f8 elementor-col-100 elementor-field-required">
-                                            <label for="form-field-field_3c614f8" class="elementor-field-label">
-                                                ¿Podrás asistir? </label>
-                                            <div class="elementor-field-subgroup  elementor-subgroup-inline"><span
-                                                    class="elementor-field-option"><input type="radio"
-                                                        value="Sí, asistiré" id="form-field-field_3c614f8-0"
-                                                        name="form_fields[field_3c614f8]" required="required"> <label
-                                                        for="form-field-field_3c614f8-0">Sí,
-                                                        asistiré</label></span><span
-                                                    class="elementor-field-option"><input type="radio"
-                                                        value="No asistiré" id="form-field-field_3c614f8-1"
-                                                        name="form_fields[field_3c614f8]" required="required"> <label
-                                                        for="form-field-field_3c614f8-1">No asistiré</label></span>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="elementor-field-type-textarea elementor-field-group elementor-column elementor-field-group-palabrasobuenosdeseos elementor-col-100">
-                                            <label for="form-field-palabrasobuenosdeseos" class="elementor-field-label">
-                                                Palabras o buenos deseos </label>
-                                            <textarea class="elementor-field-textual elementor-field  elementor-size-md"
-                                                name="form_fields[palabrasobuenosdeseos]"
-                                                id="form-field-palabrasobuenosdeseos" rows="4"
-                                                placeholder="Escribe aquí"></textarea>
-                                        </div>
+
+
                                         <div
                                             class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
-                                            <button class="elementor-button elementor-size-lg" type="submit">
+                                            <button class="elementor-button elementor-size-lg" type="submit"
+                                                id="btn_send_counterzz">
                                                 <span class="elementor-button-content-wrapper">
                                                     <span class="elementor-button-icon">
                                                         <i aria-hidden="true"
@@ -2852,6 +2847,8 @@
         const a = JSON.parse(document.getElementById("wp-emoji-settings").textContent), o = (window._wpemojiSettings = a, "wpEmojiSettingsSupports"), s = ["flag", "emoji"]; function i(e) { try { var t = { supportTests: e, timestamp: (new Date).valueOf() }; sessionStorage.setItem(o, JSON.stringify(t)) } catch (e) { } } function c(e, t, n) { e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0); t = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data); e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(n, 0, 0); const a = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data); return t.every((e, t) => e === a[t]) } function p(e, t) { e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0); var n = e.getImageData(16, 16, 1, 1); for (let e = 0; e < n.data.length; e++)if (0 !== n.data[e]) return !1; return !0 } function u(e, t, n, a) { switch (t) { case "flag": return n(e, "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f", "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f") ? !1 : !n(e, "\ud83c\udde8\ud83c\uddf6", "\ud83c\udde8\u200b\ud83c\uddf6") && !n(e, "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f", "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f"); case "emoji": return !a(e, "\ud83e\u1fac8") }return !1 } function f(e, t, n, a) { let r; const o = (r = "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? new OffscreenCanvas(300, 150) : document.createElement("canvas")).getContext("2d", { willReadFrequently: !0 }), s = (o.textBaseline = "top", o.font = "600 32px Arial", {}); return e.forEach(e => { s[e] = t(o, e, n, a) }), s } function r(e) { var t = document.createElement("script"); t.src = e, t.defer = !0, document.head.appendChild(t) } a.supports = { everything: !0, everythingExceptFlag: !0 }, new Promise(t => { let n = function () { try { var e = JSON.parse(sessionStorage.getItem(o)); if ("object" == typeof e && "number" == typeof e.timestamp && (new Date).valueOf() < e.timestamp + 604800 && "object" == typeof e.supportTests) return e.supportTests } catch (e) { } return null }(); if (!n) { if ("undefined" != typeof Worker && "undefined" != typeof OffscreenCanvas && "undefined" != typeof URL && URL.createObjectURL && "undefined" != typeof Blob) try { var e = "postMessage(" + f.toString() + "(" + [JSON.stringify(s), u.toString(), c.toString(), p.toString()].join(",") + "));", a = new Blob([e], { type: "text/javascript" }); const r = new Worker(URL.createObjectURL(a), { name: "wpTestEmojiSupports" }); return void (r.onmessage = e => { i(n = e.data), r.terminate(), t(n) }) } catch (e) { } i(n = f(s, u, c, p)) } t(n) }).then(e => { for (const n in e) a.supports[n] = e[n], a.supports.everything = a.supports.everything && a.supports[n], "flag" !== n && (a.supports.everythingExceptFlag = a.supports.everythingExceptFlag && a.supports[n]); var t; a.supports.everythingExceptFlag = a.supports.everythingExceptFlag && !a.supports.flag, a.supports.everything || ((t = a.source || {}).concatemoji ? r(t.concatemoji) : t.wpemoji && t.twemoji && (r(t.twemoji), r(t.wpemoji))) });
         //# sourceURL=https://rd-invitaciones.com/wp-includes/js/wp-emoji-loader.min.js
     </script>
+
+    <script type="module" src="./scripts.js"></script>
 </body>
 
 </html>

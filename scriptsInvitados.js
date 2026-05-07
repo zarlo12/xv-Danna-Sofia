@@ -18,7 +18,7 @@ const db = firebase.firestore();
 // ===== VARIABLES GLOBALES =====
 let allInvitados = [];
 let searchDebounceTimer = null;
-const baseUrl = "https://xv-priscilla.vercel.app";
+const baseUrl = "https://xv-danna-sofia.vercel.app";
 
 // ===== SISTEMA DE TOAST NOTIFICATIONS =====
 function showToast(message, type = "info") {
