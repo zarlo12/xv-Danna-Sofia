@@ -2109,6 +2109,140 @@
         }
         /* ===== FIN TEMA MJ ===== */
 
+        /* ===== GALERÍA DANNA SOFÍA ===== */
+        #galeria-dana {
+            background-color: #000000;
+            overflow: hidden;
+            padding: 50px 24px 60px;
+        }
+
+        #galeria-dana .galeria-titulo-wrap {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        #galeria-dana .galeria-linea {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #c9a84c, #ffd700, #c9a84c, transparent);
+            margin: 16px auto;
+            max-width: 340px;
+        }
+
+        #galeria-dana .galeria-titulo {
+            font-family: "Adamina", "Georgia", serif;
+            color: #ffd700;
+            font-size: 26px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            text-shadow: 0 0 18px rgba(255, 215, 0, 0.45), 0 2px 4px rgba(0,0,0,0.8);
+            margin: 0;
+            padding: 8px 0;
+        }
+
+        #galeria-dana .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        #galeria-dana .galeria-item {
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            box-shadow: 0 0 14px 1px rgba(255, 255, 255, 0.12), 0 0 20px rgba(201, 168, 76, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            aspect-ratio: 3/4;
+        }
+
+        #galeria-dana .galeria-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 22px 2px rgba(255, 215, 0, 0.35), 0 0 8px rgba(255,255,255,0.2);
+        }
+
+        #galeria-dana .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 20px;
+            transition: transform 0.4s ease;
+        }
+
+        #galeria-dana .galeria-item:hover img {
+            transform: scale(1.06);
+        }
+
+        #galeria-lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.93);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #galeria-lightbox.activo {
+            display: flex;
+        }
+
+        #galeria-lightbox img {
+            max-width: 90vw;
+            max-height: 88vh;
+            border-radius: 20px;
+            border: 1.5px solid #c9a84c;
+            box-shadow: 0 0 40px rgba(201, 168, 76, 0.35);
+            object-fit: contain;
+        }
+
+        #galeria-lightbox-cerrar {
+            position: absolute;
+            top: 18px; right: 24px;
+            color: #ffd700;
+            font-size: 36px;
+            cursor: pointer;
+            line-height: 1;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            user-select: none;
+        }
+
+        #galeria-lightbox-prev,
+        #galeria-lightbox-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #c9a84c;
+            font-size: 48px;
+            cursor: pointer;
+            user-select: none;
+            text-shadow: 0 0 10px rgba(201, 168, 76, 0.5);
+            padding: 10px;
+            line-height: 1;
+        }
+
+        #galeria-lightbox-prev { left: 16px; }
+        #galeria-lightbox-next { right: 16px; }
+
+        @media (max-width: 600px) {
+            #galeria-dana .galeria-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            #galeria-dana .galeria-titulo {
+                font-size: 20px;
+                letter-spacing: 3px;
+            }
+            #galeria-lightbox-prev { left: 6px; font-size: 32px; }
+            #galeria-lightbox-next { right: 6px; font-size: 32px; }
+        }
+        /* ===== FIN GALERÍA ===== */
+
         /*# sourceURL=elementor-frontend-inline-css */
     </style>
     <link rel='stylesheet' id='widget-image-css'
@@ -2395,6 +2529,87 @@
                 </div>
             </div>
         </section>
+
+        <!-- ===== GALERÍA DANNA SOFÍA ===== -->
+        <section id="galeria-dana">
+            <div class="galeria-titulo-wrap">
+                <div class="galeria-linea"></div>
+                <h2 class="galeria-titulo">Galería</h2>
+                <div class="galeria-linea"></div>
+            </div>
+            <div class="galeria-grid">
+                <div class="galeria-item" onclick="abrirLightbox(0)">
+                    <img src="./galeria_dana/1.jpeg" alt="Foto 1" loading="lazy" />
+                </div>
+                <div class="galeria-item" onclick="abrirLightbox(1)">
+                    <img src="./galeria_dana/2.jpeg" alt="Foto 2" loading="lazy" />
+                </div>
+                <div class="galeria-item" onclick="abrirLightbox(2)">
+                    <img src="./galeria_dana/3.jpeg" alt="Foto 3" loading="lazy" />
+                </div>
+                <div class="galeria-item" onclick="abrirLightbox(3)">
+                    <img src="./galeria_dana/4.jpeg" alt="Foto 4" loading="lazy" />
+                </div>
+                <div class="galeria-item" onclick="abrirLightbox(4)">
+                    <img src="./galeria_dana/5.jpeg" alt="Foto 5" loading="lazy" />
+                </div>
+                <div class="galeria-item" onclick="abrirLightbox(5)">
+                    <img src="./galeria_dana/6.jpeg" alt="Foto 6" loading="lazy" />
+                </div>
+            </div>
+        </section>
+
+        <div id="galeria-lightbox" onclick="cerrarLightboxFondo(event)">
+            <span id="galeria-lightbox-cerrar" onclick="cerrarLightbox()">&#10005;</span>
+            <span id="galeria-lightbox-prev" onclick="cambiarFoto(-1)">&#8249;</span>
+            <img id="galeria-lightbox-img" src="" alt="" />
+            <span id="galeria-lightbox-next" onclick="cambiarFoto(1)">&#8250;</span>
+        </div>
+
+        <script>
+        var galFotos = [
+            './galeria_dana/1.jpeg',
+            './galeria_dana/2.jpeg',
+            './galeria_dana/3.jpeg',
+            './galeria_dana/4.jpeg',
+            './galeria_dana/5.jpeg',
+            './galeria_dana/6.jpeg'
+        ];
+        var galIndice = 0;
+
+        function abrirLightbox(idx) {
+            galIndice = idx;
+            document.getElementById('galeria-lightbox-img').src = galFotos[galIndice];
+            document.getElementById('galeria-lightbox').classList.add('activo');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function cerrarLightbox() {
+            document.getElementById('galeria-lightbox').classList.remove('activo');
+            document.body.style.overflow = '';
+        }
+
+        function cerrarLightboxFondo(e) {
+            if (e.target === document.getElementById('galeria-lightbox')) {
+                cerrarLightbox();
+            }
+        }
+
+        function cambiarFoto(dir) {
+            galIndice = (galIndice + dir + galFotos.length) % galFotos.length;
+            document.getElementById('galeria-lightbox-img').src = galFotos[galIndice];
+        }
+
+        document.addEventListener('keydown', function(e) {
+            var lb = document.getElementById('galeria-lightbox');
+            if (!lb.classList.contains('activo')) return;
+            if (e.key === 'Escape') cerrarLightbox();
+            if (e.key === 'ArrowLeft') cambiarFoto(-1);
+            if (e.key === 'ArrowRight') cambiarFoto(1);
+        });
+        </script>
+        <!-- ===== FIN GALERÍA ===== -->
+
         <section
             class="elementor-section elementor-top-section elementor-element elementor-element-10c09193 elementor-section-boxed elementor-section-height-default elementor-section-height-default wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no"
             data-id="10c09193" data-element_type="section" data-e-type="section"
